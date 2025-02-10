@@ -71,10 +71,11 @@ ArrivalСityEnglish=input()
 print('Закакнчивается посадка на рейс',FlightNumber,AirlineNameRussian,'до',ArrivalСityRussian)
 print('This is the final boarding call for ',AirlineNameEnglish,'flight',FlightNumber,'to',ArrivalСityEnglish)
 
-11#
+#11
 name=input('Как вас зовут?')
 print(f'Привет, {name}!')
 
+#12
 price=int(input())
 GoldWatch=96//16
 SilverWatch=96
