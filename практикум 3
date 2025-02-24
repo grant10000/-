@@ -1,0 +1,79 @@
+#1
+bitcoin=input('Введите стоимость биткоина ')
+print(bitcoin[-3])
+
+#2
+seconds=int(input('Введите число от 1 до 86400'))
+n=(str(seconds//(60*60))+' часов ')+(str((seconds%(60*60))//60)+' минут ')+(str(((seconds%(60*60))%60))+' секунд' )
+print(n)
+
+#3
+Number=int(input('Введите число '))
+print(Number%2)
+
+#4
+coffee=input('Введите количество рублей ,копеек,заказов ')
+n=coffee.split(' ')
+v=str((int(n[2])*int(n[0])+((int(n[2])*int(n[1]))//100)))+' руб. '
+m=str((int(n[2])*int(n[1]))%100)+' коп. '
+print(v , m)
+
+#5
+word=int(input('Введите число '))
+a=' (' + chr(92) + '___/) '
+b=f' (=' + chr(39) + '.' + chr(39) + '=) '
+c=' (")_(") '
+print(a*word)
+print(b*word)
+print(c*word)
+
+#6
+n=input('Введите число K ')
+m=int(input('Введите число N '))
+b=int(input('Введите число R '))
+number1=n*m
+number2=int(number1)*b
+print(number2)
+
+#7
+raw = input('Enter number:')
+num = raw
+print(num)
+
+#8
+
+#9
+ATT=int(input('Введите ATT '))
+COMP=int(input('Введите COMP '))
+YDS=int(input('Введите YDS '))
+TD=int(input('Введите TD '))
+INT=int(input('Введите INT '))
+FORMULA=((((COMP/ATT)-0.3)*5+((YDS/ATT)-3)*0.25+(TD/ATT)*20+2.375-((INT/ATT)*25))/6)*100
+print(FORMULA)
+
+#10
+x=int(input('Введите число x '))
+y=int(input('Введите число y '))
+m=(x%y)*(y%x)+1
+print(m)
+
+#11
+time=int(input('Введите число N '))
+degrees=(12*60)/360
+hour=(degrees*time)//60
+minutes=(degrees*time)%60
+print(hour,minutes)
+
+#12
+from datetime import date
+date1=date.today()
+print(date1)
+
+#13
+line1=int(input('Введите количество строк '))
+Column1=int(input('Введите количество столбцов '))
+number1=int(input('Введите номер записи в справочнике '))
+text=('страница '+str((number1//(line1*Column1))+1)+' столбец '+
+      str(((number1-(line1*Column1))//line1)+1)+' строка '+
+      str(((number1-(line1*Column1))%line1)))
+print(text)
