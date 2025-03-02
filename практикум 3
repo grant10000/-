@@ -41,6 +41,20 @@ num = raw
 print(num)
 
 #8
+import math
+a = float(input("Введите сторону a: "))
+b = float(input("Введите сторону b: "))
+c = float(input("Введите сторону c: "))
+angle_A_rad = math.acos((b**2 + c**2 - a**2) / (2 * b * c))
+angle_B_rad = math.acos((a**2 + c**2 - b**2) / (2 * a * c))
+angle_C_rad = math.acos((a**2 + b**2 - c**2) / (2 * a * b))
+
+angle_A_deg = math.degrees(angle_A_rad)
+angle_B_deg = math.degrees(angle_B_rad)
+angle_C_deg = math.degrees(angle_C_rad)
+print(angle_A_deg)
+print(angle_B_deg)
+print(angle_C_deg)
 
 #9
 ATT=int(input('Введите ATT '))
