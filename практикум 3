@@ -74,8 +74,8 @@ print(m)
 #11
 time=int(input('Введите число N '))
 degrees=(12*60)/360
-hour=(degrees*time)//60
-minutes=(degrees*time)%60
+hour=int((degrees*time)//60))
+minutes=int((degrees*time)%60)
 print(hour,minutes)
 
 #12
