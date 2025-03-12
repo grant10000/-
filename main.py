@@ -1,3 +1,7 @@
+# Part of case-study #2:The economic problem about taxes
+# Developers : Nazarenko V. , Molchanova V. , Sedelnikova P. , Starikova A.
+#
+
 import en_local as en
 
 from sympy import *
