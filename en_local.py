@@ -1,0 +1,7 @@
+FIRM_K_INPUT = 'Enter the number of companies: '
+FIRMS_EXEMPT_NUM = 'Number of firms exempt from tax ='
+FIRMS_NOT_EXEMPT_NUM = 'number of firms not exempt from tax ='
+FIRM_OFFER_MC = 'Company\'s offer on the market MC ='
+OFFER_IN_BRANCH = 'Offer in branch Qs=8 q1 + 32 q2 ='
+PRODUCT_TAXED = 'Amount of the product that is taxed Qt ='
+TAX_REVENUES = 'Tax revenues to the state budget T ='
