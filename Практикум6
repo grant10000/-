@@ -1,0 +1,111 @@
+#1
+year=int(input('Введите год '))
+if year%4==0:
+    print(366)
+else:
+    print(365)
+
+#3
+number=int(input('Введите число '))
+s=[int(i) for i in str(number)]
+if s==(s[::-1]) :
+    print('настоящее')
+else:
+    print('кривое')
+
+#4    
+number=int(input('Введите количество попугаев '))
+if number<100 and number%10==1 and number!=11:
+    print(str(number)+' попугай')
+if (number<100 and number!=12 and number%10==2 or number%10==3 or number%10==4 and number!=13 and number!=14):
+    print(str(number)+' попугая')
+if (number<100 and number%10==5 or number%10==6 or number%10==7 or number%10==8 or number%10==9 or number%10==0  and number==11 or number==12 or number==13 or number==14):
+    print(str(number)+' попугаев')
+
+
+#5
+height=int(input('Введите рост '))
+weight=int(input('Введите вес '))
+IMT=weight/((height/100)**2)
+if IMT<16:
+    print('выраженный дефицит массы тела')
+if 16<=IMT<=18.49:
+    print('недостаточная масса тела')
+if 18.5 <= IMT <= 24.99:
+    print('норма')
+if 25<=IMT<=29.99:
+    print('избыточная мвсса тела')
+if 30<=IMT<=34.99:
+    print('ожирение первой степени')
+if 35<=IMT<=39.99:
+    print('ожирение второй степени')
+if IMT>=40:
+    print('ожирение третьей степени')
+
+#6
+d1=int(input('Введите число улыбок в первый день '))
+d2=int(input('Введите число улыбок во второй день '))
+d3=int(input('Введите число улыбок в третий день '))
+if d1==d2 or d1==d3 or d2==d3:
+    print(2)
+if d1==d2==d3:
+    print(3)
+if d1!=d2 and d1!=d3 and d2!=d3:
+    print(1)
+
+#7
+all=input('Введите все станции ')
+s=all.split(' ')
+if s[1]<s[2]:
+    print((int(s[0])-int(s[1]))+1)
+if s[1]>s[2]:
+    print((int(s[2])-int(s[1]))-1)
+
+#8
+kn=int(input('Введите количество кнатов '))
+sk=kn//29
+gl=sk//17
+sk1=kn//29-(gl*17)
+kn1=kn-(sk1*29) -(gl*17*29)
+if kn1==0:
+    print(str(gl)+' галлеонов ')
+    print(str(sk1)+' скиль ')
+if gl==0:
+    print(str(sk1)+' скиль ')
+    print(tr(kn1)+' кнатов ')
+if sk1==0:
+    print(str(gl)+' галлеонов ')
+    print(str(kn1)+' кнатов ')
+else:
+    print(str(gl)+' галлеонов ')
+    print(str(kn1)+' кнатов ')
+    print(str(sk1)+' скиль ')
+
+#9
+all=input('Введите все станции ')
+s=all.split(' ')
+if s[0]>=s[1]>=s[2]:
+    print(s[0],s[1],s[2])
+if s[0]>=s[2]>=s[1]:
+    print(s[0], s[2], s[1])
+if s[2]>=s[1]>=s[0]:
+    print(s[2], s[1], s[0])
+if s[2] >= s[0] >= s[1]:
+    print(s[2], s[0], s[1])
+if s[1] >= s[0] >= s[2]:
+    print(s[1], s[0], s[2])
+if s[1] >= s[2] >= s[0]:
+    print(s[1], s[2], s[0])
+
+#10
+pin=int(input('Введите PIN-код '))
+s=[int(i) for i in str(pin)]
+if len(str(pin))==4 and len(s)==len(set(s)) and (pin<1900 or pin>2050):
+    print('OK')
+else:
+    print('ERROR')
+
+
+
+
+
