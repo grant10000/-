@@ -5,6 +5,36 @@ if year%4==0:
 else:
     print(365)
 
+#2
+import turtle
+xc = int(input("Введите координату x центра окружности: "))
+yc = int(input("Введите координату y центра окружности: "))
+r = int(input("Введите радиус окружности: "))
+x = int(input("Введите координату x точки: "))
+y = int(input("Введите координату y точки: "))
+turtle.speed(0)
+turtle.penup()
+turtle.goto(xc, yc - r)
+turtle.pendown()
+turtle.circle(r)
+distance_squared = (x - xc)  2 + (y - yc)  2
+radius_squared = r ** 2
+if distance_squared < radius_squared:
+    result = "точка внутри окружности"
+elif distance_squared == radius_squared:
+    result = "точка лежит на окружности"
+else:
+    result = "точка вне окружности"
+turtle.penup()
+turtle.goto(x, y)
+turtle.dot(5, 'red')
+turtle.goto(0, -r - 60)
+turtle.pendown()
+turtle.color('red')
+turtle.write(result, align="center", font=("Arial", 7, "normal"))
+turtle.hideturtle()
+turtle.done()
+
 #3
 number=int(input('Введите число '))
 s=[int(i) for i in str(number)]
