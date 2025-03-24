@@ -1,0 +1,140 @@
+#1
+a = input("Введите AxB: ")
+s = a.split("x")
+if int(s[0]) >= 13 or int(s[1]) >= 13:
+    print("нет")
+else:
+    print("да")
+
+#2
+s = input("Ведите AxB: ")
+a = input("Введите CxDxE: ")
+b = s.split("x")
+c = a.split("x")
+s1 = int(b[0]) * int(b[1])
+if (s1 <= (int(c[0]) * int(c[1]))) or (s1 <= (int(c[0]) * int(c[2]))) or( s1 <= (int(c[1]) * int(c[2]) )):
+    print("да")
+else:
+    print("нет")
+
+#3
+n=input('Введите NxM ')
+v=int(input(''))
+m=n.split('x')
+if (int(m[0])+int(m[1]))==v:
+    print('успешно')
+else:
+    print('неуспешно')
+
+#4
+n=input('Введите координаты клетки ')
+if n[0]=='a' or n[0]=='c' or n[0]=='e' or n[0]=='g' :
+    if int(n[1])==1 or int(n[1])==3 or int(n[1])==5 or int(n[1])==7:
+        print('черная')
+    else:
+        print('белая')
+if n[0]=='b' or n[0]=='d' or n[0]=='f' or n[0]=='h' :
+    if int(n[1])==1 or int(n[1])==3 or int(n[1])==5 or int(n[1])==7:
+        print('белая')
+    else:
+        print('черная')
+
+#5
+ 
+def good(begin, end):
+    begin_x = ord(begin[0]) - ord('a')
+    begin_y = int(begin[1]) - 1
+    end_x = ord(end[0]) - ord('a')
+    end_y = int(end[1]) - 1
+
+    dx = abs(begin_x - end_x)
+    dy = abs(begin_y - end_y)
+
+    return (dx == 2 and dy == 1) or (dx == 1 and dy == 2)
+
+move = input("Введите ход: ")
+begin, end = map(input('Введите ход (через дефис): ').split('-'))
+if good(begin, end):
+    print("Верно")
+else:
+    print("Ошибка")
+
+#6
+n=input('Введите данные ')
+m=n.split(' ')
+if ((int(m[0]))*2)%(int(m[1]))==0:
+    print((int(m[0])*2)//(int(m[1]))*int(m[2]))
+else:
+    print(((int(m[0]) * 2)// (int(m[1]))+1)* int(m[2]))
+
+#7
+n=int(input('Введите число '))
+if n%5==0 or ((n%5)+5)%7==0:
+    print('да')
+else:
+    print('нет')
+
+#8
+n=int(input('Введите порядковый номер числа '))
+if n<200:
+    print(n+1)
+
+#9
+import turtle
+import math
+x1, y1, r1 = map(float, input("Введите координаты и радиус первой окружности (x y r): ").split())
+x2, y2, r2 = map(float, input("Введите координаты и радиус второй окружности (x y r): ").split())
+distance = math.sqrt((x2 - x1)  2 + (y2 - y1)  2)
+if distance > r1 + r2:
+    relation = "Окружности лежат одна вне другой, не касаясь."
+elif distance == r1 + r2:
+    relation = "Окружности имеют внешнее касание."
+elif abs(r1 - r2) < distance < (r1 + r2):
+    relation = "Окружности пересекаются."
+elif distance == abs(r1 - r2):
+    relation = "Окружности имеют внутреннее касание."
+else:
+    relation = "Одна окружность лежит внутри другой, не касаясь."
+print(relation)
+turtle.speed(1)
+turtle.penup()
+turtle.goto(x1, y1 - r1)
+turtle.pendown()
+turtle.circle(r1)
+turtle.penup()
+turtle.goto(x2, y2 - r2)
+turtle.pendown()
+turtle.circle(r2)
+turtle.done()
+
+#10
+import turtle
+x1, y1 = map(float, input("Введите координаты верхней левой вершины первого прямоугольника (x1 y1): ").split())
+x2, y2 = map(float, input("Введите координаты нижней правой вершины первого прямоугольника (x2 y2): ").split())
+x3, y3 = map(float, input("Введите координаты верхней левой вершины второго прямоугольника (x3 y3): ").split())
+x4, y4 = map(float, input("Введите координаты нижней правой вершины второго прямоугольника (x4 y4): ").split())
+if x2 < x3 or x4 < x1 or y1 < y4 or y2 > y3:
+    relation = "Прямоугольники лежат вне друг друга, не касаясь."
+elif (x2 == x3 or x4 == x1) and (y1 == y4 or y2 == y3):
+    relation = "Прямоугольники имеют касание."
+elif (x1 < x4 and x2 > x3 and y1 > y4 and y2 < y3):
+    relation = "Прямоугольники имеют пересечение."
+elif (x1 > x3 and x2 < x4 and y1 < y3 and y2 > y4):
+    relation = "Один прямоугольник лежит внутри другого, не касаясь."
+print(relation)
+turtle.speed(1)
+turtle.penup()
+turtle.goto(x1, y1)
+turtle.pendown()
+turtle.goto(x2, y1)
+turtle.goto(x2, y2)
+turtle.goto(x1, y2)
+turtle.goto(x1, y1)
+turtle.penup()
+turtle.goto(x3, y3)
+turtle.pendown()
+turtle.goto(x4, y3)
+turtle.goto(x4, y4)
+turtle.goto(x3, y4)
+turtle.goto(x3, y3)
+turtle.done()
