@@ -1,0 +1,117 @@
+#1
+
+n=int(input('Введите первый результат '))
+while n != (-1):
+    m=int(input('Введите следующий результат '))
+    if m==(-1):
+        break
+    if m>n:
+        n=m
+print(n)
+
+#2
+n=int(input('Введите первый результат '))
+b=1
+while n != (-1):
+    m=int(input('Введите следующий результат '))
+    if m==(-1):
+        break
+    if m>n:
+        b=b+1
+        n=m
+print(b)
+
+#3
+m = int(input('Введите доход первого жителя '))
+b=1
+while m != 0 :
+    n=int(input('Введите результат следующего жителя '))
+    if n==0:
+        break
+    if n!=0:
+        m=n+m
+        b=b+1
+print(m/b)
+
+#4
+n=int(input('Введите число '))
+b=[]
+b.append(n)
+
+while n != 0:
+    if n-1!=n:
+        b.append(n-1)
+        n=n-1
+    if (n-1)==0:
+        break
+
+print(b[::-1])
+
+#5
+n = int(input("Введите число N: "))
+def is_perfect(num):
+    sum_divisors = 1
+    for i in range(2, int(num**0.5) + 1):
+        if num % i == 0:
+            sum_divisors += i + num // i
+    return sum_divisors == num
+
+c=0
+for i in range(2,n+1):
+    if is_perfect(i):
+        c=c+1
+print(f"Количество совершенных чисел от 2 до {n}: {c}")
+
+
+
+#6
+n = int(input('Введите число '))
+m = '*'
+r=[]
+for i in range(1, n + 1):
+    if len(r) != n:
+        print(m)
+        m += '*'
+
+#7
+n=input('Введите число: ')
+if n.isdigit()==True and '.' not in n:
+    print(f'Введено целое число: {n}')
+else:
+    print('Ошибка. Попробуйте еще раз.')
+    n = input('Введите число: ')
+
+#8
+for i in range(1,10):
+    m=int('1'*i)
+    r=m*8 + i
+    print(f'{m} * 8 + {i} = {r}')
+
+#9
+n=int(input('Введите число '))
+def f(t):
+    m=[]
+    for i in range(1,int(t**0.5)+1):
+        if t%i==0:
+            m.append(i)
+            m.append(t//i)
+    return m
+
+for i in range(2,n+1):
+    if len(f(i))==2   :
+        print(i)
+
+#10
+n = int(input("Введите число N: "))
+def is_perfect(num):
+    sum_divisors = 1
+    for i in range(2, int(num**0.5) + 1):
+        if num % i == 0:
+            sum_divisors += i + num // i
+    return sum_divisors == num
+
+z=[]
+for i in range(2,n+1):
+    if is_perfect(i):
+        z.append(i)
+print(f"Cовершенных числа от 2 до {n}: {z}")
