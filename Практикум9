@@ -41,6 +41,25 @@ while n != 0:
         b=b+1
 print(b)
 
+#5
+for mileage in range(1000000):
+    last_five = str(mileage % 100000)
+    if last_five == last_five[::-1]:
+        mileage_plus_one = mileage + 1
+        last_five_plus_one = str(mileage_plus_one % 100000)
+        
+        if last_five_plus_one == last_five_plus_one[::-1]:
+            mileage_plus_two = mileage + 2
+            middle_four = str(mileage_plus_two % 100000)[1:5]
+            
+            if middle_four == middle_four[::-1]:
+                mileage_plus_three = mileage + 3
+                full_six = str(mileage_plus_three).zfill(6)
+                
+                if full_six == full_six[::-1]:
+                    print("Пробег в момент, когда я заметил палиндромы:", mileage)
+                    break
+
 #6
 n=int(input('Введите число 1 '))
 m=int(input('Введите число 2 '))
@@ -75,3 +94,11 @@ for i in range(1,int(n*0.5)+1):
         if (c**2)==m and c>=i:
             b+=1
 print(b)
+
+#9
+N = int(input("Введите значение N: "))
+total = 0
+for a in range(N + 1):
+    for b in range(a, N + 1):
+        total += a + b
+print(total)
