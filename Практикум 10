@@ -1,0 +1,121 @@
+#1
+try:
+    with open('input.txt' , 'r') as i,open('output.txt' , 'w') as m:
+        t=i.read()
+        m.write(t.upper())
+except FileNotFoundError:
+    print('ошибка')
+
+#2
+try:
+    with open('input.txt' , 'r') as i , open('output.txt' , 'w') as m:
+        for im in i:
+            if im.startswith('A') or im.startswith('a'):
+                m.write(im)
+except FileNotFoundError:
+    print('ошибка')
+
+
+#3
+try:
+    with open("input.txt", "r") as infile, open("output.txt", "w") as outfile:
+        result = ""
+        for line in infile:
+            if line.strip():# проверка не пуста ли строка
+                result += line.strip()[0]
+        outfile.write(result)
+except FileNotFoundError:
+    print("Ошибка: файл input.txt не найден.")
+
+
+#4
+try:
+    with open('input.txt' , 'r') as i , open('output.txt' , 'w') as m :
+        for im in i:
+            if len(im.strip())>20:
+                m.write(im)
+except FileNotFoundError:
+    print('ошибка')
+
+
+#5
+try:
+    with open('input.txt'  , 'r') as i , open('output.txt' , 'w') as w:
+        try:
+            a, m, n = map(int, i.readline().split())
+            r=a/m + n
+            w.write(str(r))
+        except ValueError:
+            w.write('Данные введены не корректно')
+        except ZeroDivisionError:
+            w.write('На 0 делить нельзя')
+except FileNotFoundError or ValueError:
+    print('ошибка')
+
+#6
+try:
+    with open('input.txt' , 'r') as i , open('output.txt' , 'w') as m:
+        try:
+        # readline()-считывает первую строку , strip()- удоляет строку
+            n=int(i.readline().strip())
+            l=i.readlines()
+            if len(l) == n:
+                m.write('Yes')
+            else:
+                m.write('No')
+        except ValueError:
+            m.write('Введены некоректные данные')
+except FileNotFoundError:
+    print('Ошибка')
+
+#7
+try:
+    with open('input.txt' , 'r') as i , open('output.txt' , 'w') as m:
+        for im in i:
+            if '100' not in im.strip():
+                m.write(im)
+except FileNotFoundError:
+    print('ошибка')
+
+
+#8
+
+#9
+import os
+from os import write
+
+try:
+    #перебирать элементы списка вместе с их индексами
+    os.makedirs('simple' , exist_ok=True)
+    with open('input.txt' , 'r') as i , open('output.txt' , 'w') as m:
+        for l,line in enumerate(i):
+            if l % 2==0:
+                m.write(line)
+except FileNotFoundError:
+    print('ошибка')
+
+#10
+from datetime import datetime, timedelta
+try:
+    with open("input.txt", "r") as infile, open("output.txt", "w") as outfile:
+        current_date_str = infile.readline().strip()
+        n = int(infile.readline().strip())
+        current_date = datetime.strptime(current_date_str, "%d.%m")
+        for _ in range(n):
+            line = infile.readline().strip().split()
+            cell_number = int(line[0])
+            baggage_date_str = line[1]
+            baggage_date = datetime.strptime(baggage_date_str, "%d.%m")
+            # Вычисляем разницу в днях, учитывая возможный переход через год
+            if baggage_date.month > current_date.month or (baggage_date.month == current_date.month and baggage_date.day > current_date.day) :
+               diff = (datetime(current_date.year+1, current_date.month, current_date.day) - datetime(current_date.year, baggage_date.month, baggage_date.day)).days
+            else:
+                diff = (current_date - baggage_date).days
+            if diff > 3:
+                outfile.write(str(cell_number) + "\n")
+
+except FileNotFoundError:
+    print("Ошибка: файл input.txt не найден.")
+except (ValueError, IndexError):
+    print("Ошибка: неверный формат входных данных.")
+
