@@ -1,0 +1,203 @@
+b#1
+def f(n):
+    m=0
+    maxi=0
+    for i in n:
+        if i.isspace():
+            m+=1
+            if m>maxi:
+                maxi=m
+        else:
+            m=0
+    return maxi
+
+n="Дан  текст   с    разным    количеством пробелов."
+print(f(n))
+
+#2
+def f(n):
+    if not n:
+        return 0
+    maxi=1
+    m=1
+    for i in range(1,len(n)):
+        if n[i]==n[i-1]:
+            m+=1
+            if m>maxi:
+                maxi=m
+        else:
+            m=1
+    return maxi
+
+n = "aaabbccccdd"
+print(f(n))
+
+#3
+def f(n):
+    if not n:
+        return 0
+    if len(set(n))>0:
+        return len(set(n))
+
+n = "aaabbccccdd"
+print(f(n))
+
+#4
+def f(n):
+    if not n:
+        return 0
+    maxi=1
+    m=1
+    for i in range(1,len(n)):
+        if n[i]==n[i-1]:
+            m+=1
+            if m==3:
+                return n[i]
+
+n = "aaabbccccdd"
+print(f(n))
+
+#5
+def f(s1, s2 ,s3):
+    ss1=set(s1)
+    ss2 = set(s2)
+    ss3 = set(s3)
+
+    m= ss1 | ss2 | ss3
+
+    n=[]
+    for i in m:
+        c=0
+        if i in ss1 :
+            c+=1
+        if i in ss2:
+            c+=1
+        if i in ss3:
+            c+=1
+        if c==1:
+            n.append(i)
+    return n
+
+s1 = "abc"
+s2 = "bcd"
+s3 = "cde"
+
+print(f(s1, s2, s3))
+
+#6
+def f(n):
+    n=n.split(' ')
+    return n[:: -1]
+
+n='vffvf bgn ngn edd'
+print(*f(n))
+
+#7
+def f(n):
+    n=n.split(' ')
+    m=[]
+    for i in range(0 , len(n)-1):
+        m.append(len(n[i]))
+    return min(m)
+
+n='vfvf hjncfg vbb cfgyukl'
+print(f(n))
+
+#8
+def f(n):
+    n=n.split(' ')
+    n.sort(key=len)
+    return n
+
+n='zxcvbn tyjkuytr ggg gyyy g'
+print(*f(n))
+
+#9
+def f(n):
+    n=n.split(' ')
+    for i in range(len(n)):
+        for j in range(i+1,len(n)):
+            if n[i]==n[j]:
+                return n[i]
+n='cvb gg fghjk vbn gg'
+print(f(n))
+
+#10
+def f(n):
+    n=n.split(' ')
+    m=n[0]
+    b=[]
+    for i in n:
+         if i != m and len(i)==len(set(i)):
+             b.append(i)
+    return b
+
+n='asdfg fghh mghj hbii bbb'
+print(f(n))
+
+#11
+cities = input().split()
+if not cities:
+    print("Петя")
+else:
+    winner = "Петя"
+
+    for i in range(1, len(cities)):
+        prev_city = cities[i - 1].lower()
+        current_city = cities[i].lower()
+        if prev_city[-1] != current_city[0]:
+
+            if i % 2 == 1:
+                winner = "Вася"
+            else:
+                winner = "Петя"
+            break
+    else:
+        if len(cities) % 2 == 1:
+            winner = "Петя"
+        else:
+            winner = "Вася"
+print(winner)
+
+#12
+import keyword
+name = input("Введите имя: ")
+if (name.isidentifier() and not keyword.iskeyword(name)):
+    print("Да, это допустимое имя")
+else:
+    print("Нет, это недопустимое имя")
+
+#13
+count = 1  # Счётчик билетов, начинаем с 1
+while True:
+    ticket = input("Введите номер билета: ")
+
+    # Проверяем, что введены только цифры
+    if not ticket.isdigit():
+        print("Ошибка: в номере должны быть только цифры")
+        continue
+
+    # Проверяем чётность количества цифр
+    if len(ticket) % 2 != 0:
+        print("Нечётное количество цифр - билет не может быть счастливым")
+        count += 1
+        continue
+
+    # Делим номер на две половины
+    half = len(ticket) // 2
+    first = ticket[:half]
+    second = ticket[half:]
+
+    # Считаем суммы цифр в каждой половине
+    sum1 = sum(int(d) for d in first)
+    sum2 = sum(int(d) for d in second)
+
+    # Проверяем условие счастливого билета
+    if sum1 == sum2:
+        print(f"Счастливый билет найден! Номер в последовательности: {count}")
+        break
+    else:
+        print("Билет не счастливый")
+        count += 1
+
+#14
